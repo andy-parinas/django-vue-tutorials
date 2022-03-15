@@ -1,0 +1,28 @@
+@host=http://127.0.0.1:8000
+@username=atparinas
+@password=ours1stheFury
+
+### Create new Account
+POST {{host}}/auth/users/
+Content-Type: application/json
+
+{
+    "username": "atparinas",
+    "email": "atparinas@gmail.com",
+    "password": "ours1stheFury",
+    "re_password": "ours1stheFury"
+}
+
+
+### Login
+POST {{host}}/auth/token/login/
+Content-Type: application/json
+
+{
+    "username": "{{username}}",
+    "password": "{{password}}"
+}
+
+### Logout
+POST {{host}}/auth/token/logout/
+Authorization: token 496fd6fdb0e9c2cfdcfed6da183a77463d44dfbb
